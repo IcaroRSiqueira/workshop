@@ -6,6 +6,8 @@
   <%= link_to 'Responder', new_challenge_solution_path(@challenge) %>
 <% end %>
 
+<%= link_to 'Soluções', challenge_solutions_path(@challenge) %>
+
 <% if @comments.present? %>
 <h2>Comentários</h2>
   <% @comments.each do |comment| %>

@@ -1,4 +1,9 @@
 class SolutionsController < ApplicationController
+  def index
+    @challenge = Challenge.find(params[:challenge_id])
+    @solutions = @challenge.solutions
+  end
+
   def new
     @challenge = Challenge.find(params[:challenge_id])
     @solution = Solution.new
@@ -20,6 +25,8 @@ class SolutionsController < ApplicationController
   def show
     @challenge = Challenge.find(params[:challenge_id])
     @solution = Solution.find(params[:id])
+    @comments = @solution.solution_comments
+    @comment = SolutionComment.new
   end
 
   private

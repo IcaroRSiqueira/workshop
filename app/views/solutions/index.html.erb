@@ -1,0 +1,5 @@
+<h1>Soluções do desafio <%= @challenge.title %></h1>
+<% @solutions.each do |solution| %>
+  <h3>Solução de <%= link_to solution.user.email, challenge_solution_path(@challenge, solution) %></h3>
+  <p><%= solution.result %></p>
+<% end %>
