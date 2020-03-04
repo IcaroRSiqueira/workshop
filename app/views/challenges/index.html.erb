@@ -1,8 +1,9 @@
 <% if @challenges.empty? %>
   <p>Nenhum desafio disponível no momento</p>
 <% else %>
+
   <% @challenges.each do |challenge| %>
-    <h3><%= challenge.title %></h3>
+    <h3><%= link_to challenge.title, challenge_path(challenge) %></h3>
     <p><%= challenge.description %></p>
   <% end %>
 <% end %>

@@ -1,0 +1,7 @@
+<%= render 'shared/errors', object: @solution %>
+
+<%= form_for [@challenge, @solution] do |f| %>
+  <%= f.label :result, 'Resultado' %>
+  <%= f.text_area :result %>
+  <%= f.submit 'Enviar' %>
+<% end %>
