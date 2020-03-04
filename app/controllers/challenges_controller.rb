@@ -5,5 +5,6 @@ class ChallengesController < ApplicationController
   
   def show
     @challenge = Challenge.find(params[:id])
+    @solution = @challenge.solutions.where(user: current_user)
   end
 end
