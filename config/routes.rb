@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :challenges, only: %i[index show] do
     resources :solutions, only: %i[new create show]
+    resources :challenge_comments, only: %i[new create]
   end
 end
